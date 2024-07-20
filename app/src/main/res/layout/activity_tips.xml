@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StatisticsActivity"
+    android:fontFamily="@font/roboto"
+    android:background="@drawable/frame_border"
+    android:padding="15dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        style="@style/img_footer"/>
+
+    <TextView
+        style="@style/txv_footer"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="140dp"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbarRegisterPool"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#063502"
+            android:elevation="4dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/txvRegPoolCampos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Como ahorrar y cuidar el planeta?"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="5dp"
+                    android:text="* Inclinación y orientación de los paneles * "
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:text="La incorrecta orientación delos paneles solares, puede disminuir la producción de energia solar entre el 5% al 20% "
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:text="Un panel solar inclinado en un angulo igual a la latitud del lugar, generará mayor cantidad de energía"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="20dp"
+                    android:text="La producción de energía solar también depende de la epoca del año, la hora del día y las condiciones climáticas"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="* Eficiencia de los paneles *"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="Opta por instalar paneles solares que utilizan tecnologías de celulas solares monocristalinas HIT e IBC, estan se construyen con silicio tipo N y pueden entregar una eficiencia que supera el 20%" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:textSize="15sp"
+                    android:paddingBottom="10dp"
+                    android:text="Para escoger el mejor panel solar, hay que considerar la calidad de los materiales y su rendimiento en diversos climas o condiciones ambientales" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="* Hábitos de Consumo *"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="Durante las horas de mayor producción solar, puedes usar los electrodomésticos de mayor consumo energético, como: aires acondicionados, lavadoras y secadoras, hornos eléctricos y microondas, plancha eléctrica, refrigeradores y congeladores, para reducir el consumo de energía de la red eléctrica" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="* Mantenimiento *"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="Realizar una limpieza del panel semestralmente con agua mineralizada, jabón y esponja suave"
+                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textSize="15sp"
+                    android:text="Un panel limpio proporciona su mayor capacidad de generación de energía. Elementos como polvo, hojas secas, manchas que dan sombra al panel disminuyen la producción energética del panel"
+                    />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnExitTips"
+        android:layout_marginBottom="80dp"
+        android:text="@string/btn_exit"
+        android:layout_gravity="bottom|center_horizontal"
+        style="@style/btn">
+
+    </Button>
+
+</FrameLayout>

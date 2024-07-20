@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SOLARSPORTS</string>
+    <string name="btn_enter">INGRESAR</string>
+    <string name="btn_register">REGISTRARSE</string>
+    <string name="btn_exit">SALIR</string>
+    <string name="btn_save">GUARDAR</string>
+    <string name="txv_question">¿No tienes una cuenta?</string>
+    <string name="txv_footer">Juega más sostenible</string>
+    <string name="edtx_name">Nombres y Apellidos</string>
+    <string name="edtx_email">Correo Electrónico</string>
+    <string name="edtx_password">Contraseña</string>
+    <string name="edtx_confirmpass">Confirmar Contraseña</string>
+    <string name="btn_category">CATEGORÍAS</string>
+    <string name="btn_statistics">ESTADÍSTICAS</string>
+    <string name="btn_tips">TIPS</string>
+
+</resources>
