@@ -143,7 +143,7 @@ public class CategoryPoolActivity extends AppCompatActivity {
 
             ImageView imgCatField;
             TextView txvFieldName, txvFieldAddress, txvFieldCity, txvFieldPhone;
-            Button btnFieldSee;
+
 
             public PoolsAdapterHolder(@NonNull View itemView) {
                 super(itemView);
@@ -153,7 +153,7 @@ public class CategoryPoolActivity extends AppCompatActivity {
                 txvFieldAddress = itemView.findViewById(R.id.txvFieldAddress);
                 txvFieldCity = itemView.findViewById(R.id.txvFieldCity);
                 txvFieldPhone = itemView.findViewById(R.id.txvFieldPhone);
-                btnFieldSee = itemView.findViewById(R.id.btnFieldSee);
+
             }
 
             public void imprimirPools (int position){

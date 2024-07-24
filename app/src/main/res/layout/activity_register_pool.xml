@@ -95,6 +95,7 @@
         android:layout_marginBottom="120dp"
         android:text="Registrar Nueva Piscina"
         android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="@color/verdeAPP"
         style="@style/btn">
 
     </Button>

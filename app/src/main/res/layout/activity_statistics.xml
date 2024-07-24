@@ -95,6 +95,7 @@
         android:layout_marginBottom="120dp"
         android:text="@string/btn_exit"
         android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="@color/verdeAPP"
         style="@style/btn">
 
     </Button>

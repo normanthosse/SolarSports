@@ -38,6 +38,16 @@
                 android:layout_marginBottom="10dp"/>
 
             <EditText
+                android:id="@+id/edtxRegCityField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Ciudad"
+                android:inputType="text"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
                 android:id="@+id/edtxRegPhoneField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -61,7 +71,7 @@
                 android:id="@+id/edtxRegPowerGenField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Energia Generada por día"
+                android:hint="Energia Generada por hora"
                 android:inputType="text"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -71,7 +81,7 @@
                 android:id="@+id/edtxRegPowerConsumField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Energia Consumida por dia"
+                android:hint="Energia Consumida por hora"
                 android:inputType="text"
                 android:textStyle="bold"
                 android:textColor="@color/black"

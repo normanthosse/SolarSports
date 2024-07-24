@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +33,10 @@ public class CategoryFieldActivity extends AppCompatActivity {
 
     String [] city = {"Bogotá", "Bogotá", "Bogotá", "Bogotá", "Bogotá"};
     String [] phone = {"3118866011", "3124332111", "3125678811", "3002345611", "3103211211"};
+
+    Double [] power = {4000.0, 4800.0, 5200.0, 6000.0, 6800.0};
+    Double [] generated = {20000.0, 24000.0, 25000.0, 26000.0, 34000.0};
+    Double [] consumed = {20000.0, 24000.0, 25000.0, 126000.0, 18000.0};
     int [] imgfields = {R.drawable.field_creativos, R.drawable.field_amistad, R.drawable.field_futbol8, R.drawable.field_messi, R.drawable.fiel_la11};
 
 
@@ -72,8 +77,8 @@ public class CategoryFieldActivity extends AppCompatActivity {
             }
         });
 
-        TextView txvFieldtCanchas =findViewById(R.id.txvFieldCanchas);
-        txvFieldtCanchas.setOnClickListener(new View.OnClickListener() {
+        TextView txvFieldCanchas =findViewById(R.id.txvFieldCanchas);
+        txvFieldCanchas.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -92,7 +97,6 @@ public class CategoryFieldActivity extends AppCompatActivity {
             }
         });
 
-
         TextView txvFieldPiscinas = findViewById(R.id.txvFieldPiscinas);
         txvFieldPiscinas.setOnClickListener(new View.OnClickListener() {
 
@@ -102,7 +106,6 @@ public class CategoryFieldActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         //Referenciar el recyclerView del layout, como se va a ver y setear
         RecyclerView recycler_fields = findViewById(R.id.recycler_fields);
@@ -152,11 +155,9 @@ public class CategoryFieldActivity extends AppCompatActivity {
 
         //crear viewHolder para fields, donde se ubican los datos de cada item
         private class FieldsAdapterHolder extends RecyclerView.ViewHolder{
-
             //generar variables del modelo cate_field
             ImageView imgCatField;
-            TextView txvFieldName, txvFieldAddress, txvFieldCity, txvFieldPhone;
-            Button btnFieldSee;
+            TextView txvFieldName, txvFieldAddress, txvFieldCity, txvFieldPhone, txvFieldPower, txvEnergyGenerat, txvEnergyConsum;
 
                 //crear construcctor [definir y construir objeto]
             public FieldsAdapterHolder(@NonNull View itemView) {
@@ -167,15 +168,21 @@ public class CategoryFieldActivity extends AppCompatActivity {
                 txvFieldAddress = itemView.findViewById(R.id.txvFieldAddress);
                 txvFieldCity = itemView.findViewById(R.id.txvFieldCity);
                 txvFieldPhone = itemView.findViewById(R.id.txvFieldPhone);
-                btnFieldSee = itemView.findViewById(R.id.btnFieldSee);
+                txvFieldPower = itemView.findViewById(R.id.txvFieldPower);
+                txvEnergyGenerat = itemView.findViewById(R.id.txvEnergyGenerat);
+                txvEnergyConsum = itemView.findViewById(R.id.txvEnergyConsum);
 
             }
             public void imprimir (int position) {
                 imgCatField.setImageResource(imgfields[position]);
                 txvFieldName.setText(fields[position]);
-                txvFieldCity.setText(city[position]);
-                txvFieldAddress.setText(address[position]);
-                txvFieldPhone.setText(phone[position]);
+                txvFieldCity.setText("Ciudad : " +city[position]);
+                txvFieldAddress.setText("Dirección : " + address[position]);
+                txvFieldPhone.setText("Teléfono : " +phone[position]);
+                txvFieldPower.setText(String.valueOf("Potencia Instalada : " +power[position] + "  Watts"));
+                txvEnergyGenerat.setText(String.valueOf("Energía Generada : " + generated[position] + "Watts"));
+                txvEnergyConsum.setText(String.valueOf("Energía Consumida : " + consumed[position] + "Watts"));
+
             }
         }
     }

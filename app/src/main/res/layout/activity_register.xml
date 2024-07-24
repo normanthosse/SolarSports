@@ -76,13 +76,15 @@
             android:id="@+id/btnRegisterR"
             android:layout_marginTop="20dp"
             android:text="@string/btn_register"
+            android:backgroundTint="@color/verdeAPP"
             style="@style/btn"/>
 
         <Button
           android:id="@+id/btnExitR"
           android:layout_marginTop="25dp"
           android:text="@string/btn_exit"
-          style="@style/btn"/>
+            android:backgroundTint="@color/verdeAPP"
+            style="@style/btn"/>
 
   </LinearLayout>
 

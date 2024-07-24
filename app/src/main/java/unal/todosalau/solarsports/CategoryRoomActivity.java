@@ -148,7 +148,7 @@ public class CategoryRoomActivity extends AppCompatActivity {
         private class RoomsAdapterHolder extends RecyclerView.ViewHolder {
             ImageView imgCatField;
             TextView txvFieldName, txvFieldAddress, txvFieldCity, txvFieldPhone;
-            Button btnFieldSee;
+
 
             public RoomsAdapterHolder(@NonNull View itemView) {
                 super(itemView);
@@ -158,7 +158,7 @@ public class CategoryRoomActivity extends AppCompatActivity {
                 txvFieldAddress = itemView.findViewById(R.id.txvFieldAddress);
                 txvFieldCity = itemView.findViewById(R.id.txvFieldCity);
                 txvFieldPhone = itemView.findViewById(R.id.txvFieldPhone);
-                btnFieldSee = itemView.findViewById(R.id.btnFieldSee);
+
             }
 
             public void imprimirRooms (int position) {

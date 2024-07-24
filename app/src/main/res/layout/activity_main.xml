@@ -35,7 +35,8 @@
             android:layout_marginTop="130dp"
             android:text="@string/btn_enter"
             android:layout_gravity="center"
-            style="@style/btn"></Button>
+            android:backgroundTint="@color/verdeAPP"
+            style="@style/btn" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,6 +52,7 @@
             android:layout_marginTop="15dp"
             android:text="@string/btn_register"
             android:layout_gravity="center"
+            android:backgroundTint="@color/verdeAPP"
             style="@style/btn"></Button>
     </LinearLayout>
 

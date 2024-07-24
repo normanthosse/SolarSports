@@ -30,6 +30,18 @@
      android:layout_marginBottom="200dp"
      >
 
+     <TextView
+         android:id="@+id/txvDate"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="4dp"
+         android:text="Date"
+         android:textAlignment="viewEnd"
+         android:textColor="@android:color/black"
+         android:textSize="12sp"
+         android:textColorHint="@color/verdeAPP"
+         android:textStyle="bold" />
+
      <androidx.cardview.widget.CardView
          android:layout_width="match_parent"
          android:layout_height="match_parent"
@@ -70,7 +82,7 @@
                      android:layout_height="wrap_content"
                      android:text="@string/btn_category"
                      android:textStyle="bold"
-                     android:textSize="25dp"/>
+                     android:textSize="25sp"/>
 
              </LinearLayout>
 
@@ -98,7 +110,7 @@
                      android:layout_height="wrap_content"
                      android:text="@string/btn_statistics"
                      android:textStyle="bold"
-                     android:textSize="25dp"/>
+                     android:textSize="25sp"/>
 
              </LinearLayout>
 
@@ -126,7 +138,7 @@
                      android:layout_height="wrap_content"
                      android:text="@string/btn_tips"
                      android:textStyle="bold"
-                     android:textSize="25dp"/>
+                     android:textSize="25sp"/>
 
              </LinearLayout>
          </LinearLayout>
@@ -137,6 +149,8 @@
         android:layout_marginBottom="120dp"
         android:text="@string/btn_exit"
         android:layout_gravity="bottom|center_horizontal"
-        style="@style/btn"/>
+        android:backgroundTint="@color/verdeAPP"
+        style="@style/btn"
+        />
 
 </FrameLayout>

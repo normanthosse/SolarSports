@@ -4,11 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    private EditText edtxPassword;
+    private EditText edtxName;
+    private EditText edtxEmail;
+    private EditText edtxConfirmPass;
+
+    private CheckBox checkBoxRegister;
+
+    //clase para los datos del usuario
+    private UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +47,41 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), EnterActivity.class);
                 startActivity(intent);
+
+                String email = edtxEmail.getText().toString().trim();
+                String password = edtxPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(RegisterActivity.this, "Ingrese un correo electrónico", Toast.LENGTH_SHORT).show();
+                } else if (!isValidEmail(email)) {
+                    Toast.makeText(RegisterActivity.this, "Ingrese un correo electrónico válido", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(RegisterActivity.this, "Ingrese una contraseña", Toast.LENGTH_SHORT).show();
+                } else if (!checkBoxRegister.isChecked()) {
+                    Toast.makeText(RegisterActivity.this, "Debe aceptar los Términos y Condiciones", Toast.LENGTH_SHORT).show();
+                } else {
+                    registrarUsuario(email, password);
+                }
             }
         });
 
+
+        edtxEmail = findViewById(R.id.edtxEmail);
+        edtxName = findViewById(R.id.edtxName);
+        edtxPassword = findViewById(R.id.edtxPassword);
+        edtxConfirmPass = findViewById(R.id.edtxConfirmPass);
+        checkBoxRegister = findViewById(R.id.checkBoxRegister);
+
+        userManager = new UserManager(this);
+
+    }
+    private boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+    private void registrarUsuario(String email, String password) {
+        userManager.registerUser(email, password);
+        Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

@@ -52,10 +52,10 @@
 
         <Button
             android:id="@+id/btnIngresarE"
-            style="@style/btn"
-            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/btn_enter" />
+            android:text="@string/btn_enter"
+            android:backgroundTint="@color/verdeAPP"
+            style="@style/btn"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,6 +69,7 @@
             android:id="@+id/btnRegisterE"
             android:layout_marginTop="20dp"
             android:text="@string/btn_register"
+            android:backgroundTint="@color/verdeAPP"
             style="@style/btn"/>
 
     </LinearLayout>
