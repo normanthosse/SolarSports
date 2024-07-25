@@ -51,7 +51,7 @@ public class EnterActivity extends AppCompatActivity {
             }
         });
 
-
+        //establecer validación usuario
         edtxEmailE = findViewById(R.id.edtxEmailE);
         edtxPasswordE = findViewById(R.id.edtxPasswordE);
 
