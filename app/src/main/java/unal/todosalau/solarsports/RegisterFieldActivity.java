@@ -2,7 +2,9 @@ package unal.todosalau.solarsports;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,6 +26,7 @@ public class RegisterFieldActivity extends AppCompatActivity {
     EditText edtxRegPowerField;
     EditText edtxRegPowerGenField;
     EditText edtxRegPowerConsumField;
+    EditText edtxRegCityField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class RegisterFieldActivity extends AppCompatActivity {
 
         edtxRegNameField = findViewById(R.id.edtxRegNameField);
         edtxRegAddressField = findViewById(R.id.edtxRegAddressField);
+        edtxRegCityField = findViewById(R.id.edtxRegCityField);
         edtxRegPhoneField = findViewById(R.id.edtxRegPhoneField);
         edtxRegPowerField = findViewById(R.id.edtxRegPowerField);
         edtxRegPowerGenField = findViewById(R.id.edtxRegPowerGenField);
@@ -47,19 +51,7 @@ public class RegisterFieldActivity extends AppCompatActivity {
 
 
         Button btnRegField = findViewById(R.id.btnRegField);
-        btnRegField.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(RegisterFieldActivity.this, "SE REGISTRO UN NUEVO CAMPO", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), CategoryFieldActivity.class);
-                startActivity(intent);
-
-                registerField();
-            }
-        });
-
-
+        btnRegField.setOnClickListener(v -> registerField());
     }
 
     //configurar regreso en toolbar
@@ -75,11 +67,36 @@ public class RegisterFieldActivity extends AppCompatActivity {
 
         String fieldName = edtxRegNameField.getText().toString();
         String fieldAddress = edtxRegAddressField.getText().toString();
+        String fieldCity = edtxRegCityField.getText().toString();
         String fieldPhone = edtxRegPhoneField.getText().toString();
         String fieldPower = edtxRegPowerField.getText().toString();
         String fieldPowerGen = edtxRegPowerGenField.getText().toString();
         String fieldPowerCons = edtxRegPowerConsumField.getText().toString();
 
+        if(fieldName.isEmpty()|| fieldAddress.isEmpty() || fieldCity.isEmpty() || fieldPhone.isEmpty()
+                || fieldPowerCons.isEmpty() || fieldPowerGen.isEmpty() || fieldPower.isEmpty()){
+            Toast.makeText(this, "Complete los campos obligatorios", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //guardar los datos en ShareReference como RegisterField en modo privado
+        SharedPreferences preferences = getSharedPreferences("RegisterField", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        int index = preferences.getInt("index", 0);
+        editor.putString("name" + index, fieldName);
+        editor.putString("address" + index, fieldAddress);
+        editor.putString("phone" + index, fieldPhone);
+        editor.putString("city" + index, fieldCity);
+        editor.putString("Power" + index, fieldPower);
+        editor.putString("Generated" + index, fieldPowerGen);
+        editor.putString("consumed" + index, fieldPowerCons);
+
+        editor.putInt("index", index+1);
+        editor.apply();
+
+        Toast.makeText(this,"Campo Registrado", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 
